@@ -1,0 +1,208 @@
+{
+    "data": [
+        {"ourQualities" : [
+            {
+                "id": 1,
+                "image": "./quality_food.svg",
+                "title": "QUALITY FOOD",
+                "description": "We source only the freshest ingredients from local suppliers. Our commitment to quality ensures that every dish is prepared with the finest ingredients available." 
+            },
+            {
+                "id": 2,
+                "image": "./super_taste.svg",
+                "title": "SUPER TASTE",
+                "description": "Our award-winning chefs blend traditional techniques with modern innovation to create unique flavors that will delight your taste buds with every bite." 
+            },
+            {
+                "id": 3,
+                "image": "./fast_delivery.svg",
+                "title": "FAST DELIVERY",
+                "description": "We understand the value of your time. Our delivery service ensures that your food arrives quickly and still hot and fresh, just as if you were dining in our restaurant." 
+            }
+        ],
+        "dishes": [
+            {
+                "id": 1,
+                "image": "./dinner1.jpeg",
+                "title": "ROASTED LAMB RUMP",
+                "category": "Dinner",
+                "description": "Tender lamb rump roasted to perfection, served with seasonal vegetables and mint jus.",
+                "price": "$28.99",
+                "rating": 5,
+                "reviews": 124
+            },
+            {
+                "id": 2,
+                "image": "./dinner2.png",
+                "title": "CITRUS CURED SALMON",
+                "category": "Dinner",
+                "description": "Fresh salmon cured in citrus zest, served with avocado purée and crispy capers.",
+                "price": "$24.99",
+                "rating": 4,
+                "reviews": 98
+            },
+            {
+                "id": 3,
+                "image": "./breakfast1.png",
+                "title": "PAN SEARED SEA BASS",
+                "category": "Breakfast",
+                "description": "Crispy skin sea bass on a bed of crushed potatoes with a light lemon butter sauce.",
+                "price": "$19.99",
+                "rating": 5,
+                "reviews": 87
+            },
+            {
+                "id": 4,
+                "image": "./dinner3.png",
+                "title": "MUSHROOM RISOTTO",
+                "category": "Dinner",
+                "description": "Creamy arborio rice cooked with wild mushrooms and finished with truffle oil and parmesan.",
+                "price": "$12.99",
+                "rating": 4,
+                "reviews": 112
+            },
+            {
+                "id": 5,
+                "image": "./dinner4.png",
+                "title": "BEEF WELLINGTON",
+                "category": "Dinner",
+                "description": "Tender fillet of beef wrapped in mushroom duxelles and golden puff pastry.",
+                "price": "$16.99",
+                "rating": 5,
+                "reviews": 156
+            },
+            {
+                "id": 6,
+                "image": "./dinner5.png",
+                "title": "LOBSTER THERMIDOR",
+                "category": "Dinner",
+                "description": "Lobster meat in a creamy brandy sauce, gratinated with cheese and served with asparagus.",
+                "price": "$22.99",
+                "rating": 5,
+                "reviews": 78
+            },
+            {
+                "id": 7,
+                "image": "./lunch1.png",
+                "title": "CAESAR SALAD",
+                "category": "Lunch",
+                "description": "Crisp romaine lettuce with our house-made dressing, garlic croutons and shaved parmesan.",
+                "price": "$18.99",
+                "rating": 4,
+                "reviews": 65
+            },
+            {
+                "id": 8,
+                "image": "./dinner6.png",
+                "title": "DUCK BREAST",
+                "category": "Dinner",
+                "description": "Crispy skinned duck breast with cherry sauce, dauphinoise potatoes and braised red cabbage.",
+                "price": "$26.99",
+                "rating": 5,
+                "reviews": 92
+            }
+        ],
+        "team": [
+            {
+                "id": 1,
+                "image": "./team_member_1.png",
+                "name": "Michael Johnson",
+                "designation": "Founder & Head Chef"
+            },
+            {
+                "id": 2,
+                "image": "./team_member_2.png",
+                "name": "Sarah Williams",
+                "designation": "Sous Chef"
+            },
+            {
+                "id": 3,
+                "image": "./team_member_3.png",
+                "name": "Robert Davis",
+                "designation": "Fast Food Chef"
+            },
+            {
+                "id": 4,
+                "image": "./team_member_4.png",
+                "name": "Emily Thompson",
+                "designation": "Pastry Chef"
+            }
+        ],
+        "testimonials": [
+            {
+                "id": 1,
+                "image": "./review_1.png",
+                "message": "The food was extraordinary, and the service was impeccable. Will definitely return!",
+                "userName": "Jane Cooper"
+            },
+            {
+                "id": 2,
+                "image": "./review_2.png",
+                "message": "An exceptional dining experience! The ambiance and cuisine were perfect for our anniversary.",
+                "userName": "Esther Howard"
+            },
+            {
+                "id": 3,
+                "image": "./review_3.png",
+                "message": "The chef's tasting menu was outstanding, with perfect wine pairings for each course.",
+                "userName": "Robert Fox"
+            }
+        ],
+        "who_we_are": [
+            {
+                "id": 1,
+                "number": "10+",
+                "title": "Restaurants"
+            },
+            {
+                "id": 2,
+                "number": "25+",
+                "title": "Chef In Kitchen"
+            },
+            {
+                "id": 3,
+                "number": "15+",
+                "title": "Years Of Experience"
+            },
+            {
+                "id": 4,
+                "number": "50K+",
+                "title": "Happy Customers"
+            }
+        ],
+        "navbarLinks": [
+            {
+                "id": 1,
+                "title": "Home",
+                "link": "heroSection"
+            },
+            {
+                "id": 2,
+                "title": "About",
+                "link": "about"
+            },
+            {
+                "id": 3,
+                "title": "Qualities",
+                "link": "qualities"
+            },
+            {
+                "id": 4,
+                "title": "Menu",
+                "link": "menu"
+            },
+            {
+                "id": 5,
+                "title": "Team",
+                "link": "team"
+            },
+            {
+                "id": 6,
+                "title": "Reservation",
+                "link": "reservation"
+            }
+        ]
+    
+    } 
+    ]
+}

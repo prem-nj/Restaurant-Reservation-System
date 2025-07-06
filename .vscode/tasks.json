@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Restaurant Reservation System",
+			"type": "shell",
+			"command": "cd backend && npm run dev & cd frontend && npm run dev",
+			"isBackground": true,
+			"group": "build",
+			"problemMatcher": []
+		}
+	]
+}
