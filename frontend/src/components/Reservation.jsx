@@ -76,6 +76,37 @@ const Reservation = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  // Function to attempt reservation with multiple endpoints to bypass ad blockers
+  const attemptReservation = async (reservationData, endpoints) => {
+    for (let i = 0; i < endpoints.length; i++) {
+      try {
+        const { data } = await fetch(endpoints[i], {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+          },
+          credentials: 'include',
+          body: JSON.stringify(reservationData)
+        }).then(res => {
+          if (!res.ok) {
+            throw new Error(`Server responded with ${res.status}`);
+          }
+          return res.json();
+        });
+        
+        console.log("Reservation successful using endpoint:", endpoints[i]);
+        return { success: true, data };
+      } catch (err) {
+        console.log(`Endpoint ${endpoints[i]} failed:`, err);
+        // Continue to next endpoint
+        if (i === endpoints.length - 1) {
+          throw err; // Re-throw the error if all endpoints fail
+        }
+      }
+    }
+  };
+
   const handleReservation = async (e) => {
     e.preventDefault();
     
@@ -96,43 +127,49 @@ const Reservation = () => {
       };
       
       console.log("Sending reservation request to backend...");
-      const { data } = await axios.post(
-        "http://localhost:4000/api/v1/reservation/send",
-        reservationData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
-      console.log("Reservation successful:", data);
-      toast.success(data.message);
-      setFirstName("");
-      setLastName("");
-      setPhone("");
-      setEmail("");
-      setTime("");
-      setDate("");
-      navigate("/success");
-    } catch (error) {
-      console.error("Reservation error:", error);
       
-      // More detailed error handling
-      if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.error("Error response data:", error.response.data);
-        console.error("Error response status:", error.response.status);
-        toast.error(`Error: ${error.response.data.message || "Something went wrong with your reservation"}`);
-      } else if (error.request) {
-        // The request was made but no response was received
-        console.error("Error request:", error.request);
-        toast.error("No response from server. Please check your connection or try again later.");
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.error("Error message:", error.message);
-        toast.error("An error occurred while making your reservation.");
+      // Define multiple endpoints to try (to bypass ad blockers)
+      const endpoints = [
+        "http://localhost:4000/api/v1/reservation/book",  // Try alternative endpoint first
+        "http://localhost:4000/api/v1/bookings/create",   // Another alternative path
+        "http://localhost:4000/api/v1/reservation/send"   // Original endpoint as fallback
+      ];
+      
+      // Try to make the reservation using multiple endpoints
+      const result = await attemptReservation(reservationData, endpoints);
+      
+      if (result && result.success) {
+        console.log("Reservation successful:", result.data);
+        toast.success(result.data.message || "Reservation successful!");
+        setFirstName("");
+        setLastName("");
+        setPhone("");
+        setEmail("");
+        setTime("");
+        setDate("");
+        navigate("/success");
+      }
+    } catch (error) {
+      console.error("All reservation attempts failed:", error);
+      
+      // Fallback to using the Fetch API directly as a last resort
+      try {
+        console.log("Attempting direct fetch as fallback...");
+        const response = await fetch("http://localhost:4000/api/test", {
+          method: 'GET',
+          headers: { 'X-Requested-With': 'XMLHttpRequest' },
+          credentials: 'include'
+        });
+        
+        if (response.ok) {
+          console.log("API is accessible, but reservation endpoints are blocked");
+          toast.error("Your browser may be blocking the reservation system. Please try disabling ad blockers or try a different browser.");
+        } else {
+          toast.error("Unable to connect to the reservation system. Please try again later.");
+        }
+      } catch (fetchError) {
+        console.error("Even test endpoint failed:", fetchError);
+        toast.error("Unable to connect to the server. Please check your internet connection.");
       }
     } finally {
       setLoading(false);
