@@ -45,7 +45,7 @@ const Navbar = () => {
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="logo">
           <img src="/logo.svg" alt="logo" className="logo-img" />
-          <span>Ethnus Restaurant</span>
+          <span>REserve it</span>
         </div>
         
         <div className={`navLinks ${show ? 'navActive' : ''}`}>
