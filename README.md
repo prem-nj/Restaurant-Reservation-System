@@ -1,12 +1,49 @@
-# React + Vite
+# 🏨 Restaurant Reservation System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web app that enables customers to browse restaurants, see real‑time seating availability, and book reservations, while restaurant owners manage bookings and capacity.
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Visit the live version: https://restaurant‑reservation‑system‑2wnb.vercel.app/
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Table of Contents
+
+- [Features](#features)  
+- [Technology Stack](#technology-stack)  
+- [Architecture](#architecture)  
+- [Prerequisites](#prerequisites)  
+- [Installation & Run](#installation--run)  
+- [Usage](#usage)  
+- [Project Structure](#project-structure)  
+- [Contributing](#contributing)  
+- [Licensing](#licensing)
+
+---
+
+## Features
+
+- **User roles**: Customer and restaurant owner/accounts  
+- **Browse restaurants**: Filter by location, cuisine, capacity  
+- **View availability**: Real‑time seat / table availability  
+- **Reservation management**: Book, cancel, or modify reservations  
+- **Restaurant dashboard**: Owners can manage tables, capacity, view reservations  
+- **Interactive maps**: Location-based search & map view (*if included*)  
+- **Secure authentication**: Login/sign‑up and session management with hashed passwords—powered by JWT/Bcrypt/Helmet for backend security  
+- **Notifications**: Email/SMS confirmations and reminders (*if implemented*)
+
+---
+
+## Technology Stack
+
+- **Frontend**: React (with Hooks/Context API), Sass/Tailwind CSS  
+- **Backend**: Node.js + Express  
+- **Database**: MongoDB with Mongoose ODM  
+- **Auth & Security**: bcryptjs, helmet, jsonwebtoken  
+- **Utilities**: CORS, dotenv, morgan for logging, RESTful routing  
+- **Deployment**: Vercel (frontend + API endpoints)
+
+---
+
+
