@@ -55,7 +55,7 @@ Visit the live version: https://restaurant‑reservation‑system‑2wnb.vercel.
 
 ## Installation & Local Setup
 
-```bash
+
 git clone <repo-url>
 cd restaurant-reservation-system
 npm install
