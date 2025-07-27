@@ -45,5 +45,42 @@ Visit the live version: https://restaurant‑reservation‑system‑2wnb.vercel.
 - **Deployment**: Vercel (frontend + API endpoints)
 
 ---
+## Prerequisites
 
+- Node.js v14+ / npm  
+- MongoDB (local or Atlas)  
+- Optional: `.env` file for sensitive keys (e.g. `JWT_SECRET`, `DB_URI`)
+
+---
+
+## Installation & Local Setup
+
+```bash
+git clone <repo-url>
+cd restaurant-reservation-system
+npm install
+
+## Project Structure
+/backend
+  ├── controllers/
+  ├── models/
+  ├── routes/
+  └── middleware/
+  
+/frontend
+  ├── components/
+  ├── pages/
+  └── context/
+
+----------
+## License
+
+This project is released under the **MIT License**.
+
+---
+
+## Credits & References
+
+- Inspired by MERN-stack tutorials and examples (e.g. React + Node + Express + MongoDB reservation systems)
+- Project plan references and architecture ideas from typical reservation app templates
 
